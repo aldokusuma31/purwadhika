@@ -36,7 +36,7 @@ function myFunc(a, b, ...more) {
     console.log(more)
 }
 
-myFunc("One", "Two", "Three", "Four")
+// myFunc("One", "Two", "Three", "Four")
 
 // nested function
 
@@ -52,4 +52,46 @@ function getMessage(firstName) {
     return sayHello() + welcomeMessage()
 }
 
-console.log(getMessage("Aldo"))
+// console.log(getMessage("Aldo"))
+
+// closure function
+
+function greeting(name) {
+    const defaultMessage = "Hello "
+
+    return function() {
+        return defaultMessage + name
+    }
+}
+
+const greetingDavid = greeting("David")
+// console.log(greetingDavid())
+
+// currying function
+function multiplier(factor) {
+    return function(number) {
+        return factor * number
+    }
+}
+
+const mul3 = multiplier(3)
+const mul5 = multiplier(5)
+// console.log(mul3(3))
+// console.log(mul5(5))
+
+// recursive function
+function countDown(fromNumber) {
+    console.log(fromNumber)
+
+    let nextNumber = fromNumber - 1
+
+    if (nextNumber > 0) {
+        countDown(nextNumber)
+    }
+}
+
+// countDown(3)
+
+// Arrow Function\
+const square = (number) => number * number
+// console.log(square(19))
