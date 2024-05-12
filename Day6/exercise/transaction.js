@@ -26,6 +26,16 @@ class Transaction {
         console.log('------------------------')
         console.log(`Total : ${this.#total}`)
     }
+
+    checkout(money) {
+        if (money < this.#total) {
+            throw new Error("Uang anda tidak cukup")
+        } else {
+            console.log(`Cash : ${money}`)
+            console.log(`Return : ${money - this.#total}`)
+            console.log(`--- Thank You ---`)
+        }
+    }
 }
 
 const transaction1 = new Transaction()
@@ -34,5 +44,5 @@ transaction1.addToChart(product1, 3)
 transaction1.addToChart(product3, 1)
 transaction1.addToChart(product2, 5)
 transaction1.getTotal()
-
+transaction1.checkout(100000)
 // console.log(transaction1.products)
