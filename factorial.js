@@ -1,7 +1,7 @@
 let res = []
 function factorial(n) {
     res.push(n)
-    let hasil = n == 0 ? 1 : n * factorial(n - 1)
+    return n == 0 ? 1 : n * factorial(n - 1)
 }
 
 let hasil = factorial(5)
